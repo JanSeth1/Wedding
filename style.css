@@ -1,16 +1,19 @@
 /* Minimalist Modern Wedding Invitation Styles */
 :root {
-    --light-blue: #c5d5e4;
-    --dusty-blue: #7a8fa3;
-    --navy-blue: #1d3557;
+    --light-blue: #c6d4e1;
+    --dusty-blue: #8da1b9;
+    --navy-blue: #4a5d75;
     --gold: #d4b26a;
-    --cream: #f0e6d3;
-    --beige: #f9f5f0;
+    --cream: #f5efe6;
+    --beige: #faf7f2;
     --white: #ffffff;
-    --text-dark: #333333;
+    --text-dark: #2c3e50;
     --text-light: #ffffff;
-    --peach: #ffcdb2;
-    --divider-color: rgba(0, 0, 0, 0.15);
+    --peach: #f5e6d3;
+    --rose-gold: #b76e79;
+    --sage-green: #9caf88;
+    --blush-pink: #f7cac9;
+    --divider-color: rgba(141, 161, 185, 0.15);
     --page-transition-duration: 0.6s;
 }
 
@@ -237,9 +240,9 @@ nav.hidden {
 }
   
 .hero .subheading {
-    font-size: 16px;
+    font-size: 26px;
     margin-bottom: 30px;
-    color: var(--peach);
+    color: var(--navy-blue);
     font-family: 'Playfair Display', serif;
     opacity: 0.8;
 }
@@ -642,11 +645,108 @@ nav.hidden {
 
 .rsvp {
     background-color: var(--cream);
-    padding: 80px 20px;
-    width: 95%;
+    padding: 120px 20px;
+    width: 100%;
     margin: 0 auto;
-    max-width: 95%;
+    max-width: 100%;
     text-align: center;
+    position: relative;
+    background-image: linear-gradient(to bottom, var(--cream) 0%, var(--beige) 100%);
+}
+
+.rsvp .subheading {
+    font-size: 1.2rem;
+    color: var(--navy-blue);
+    margin-bottom: 40px;
+    font-family: 'Playfair Display', serif;
+    opacity: 0.9;
+}
+
+.form-group {
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 15px 20px;
+    border: 1px solid black;
+    font-size: 16px;
+    color: var(--text-dark);
+    background: var(--beige);
+    transition: all 0.3s ease;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 0.5px;
+    box-shadow: none;
+    margin-top: 8px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--navy-blue);
+    outline: none;
+    box-shadow: none;
+    transform: none;
+    background-color: transparent;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.rsvp-submit {
+    width: 100%;
+    padding: 15px;
+    margin-top: 2rem;
+    background: var(--text-dark);
+    color: var(--beige);
+    border: none;
+    border-radius: 0;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'Playfair Display', serif;
+    line-height: normal;
+    position: relative;
+    overflow: hidden;
+}
+
+.rsvp-submit:hover {
+    background: var(--navy-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.rsvp-submit:active {
+    transform: translateY(0);
+}
+
+#rsvp-form {
+    max-width: 500px;
+    margin: 0;
+    padding: 50px 50px 50px 0; /* Removes left padding */
+    background: var(--beige);
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+#rsvp-form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    /* background: linear-gradient(to right, var(--gold), var(--dusty-blue)); */
 }
 
 @media screen and (max-width: 768px) {
@@ -693,24 +793,134 @@ nav.hidden {
     }
 }
 
-#rsvp-form {
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 40px;
-    background: var(--white);
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+.rsvp-container {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: flex-start;
 }
 
-.rsvp input, .rsvp select, .rsvp button {
+.rsvp-form-section {
+    flex: 1;
+    max-width: 600px;
+}
+
+.rsvp-form-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    color: var(--navy-blue);
+    letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
+}
+
+.rsvp h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: var(--navy-blue);
+    letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
+}
+
+.rsvp h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background-color: var(--gold);
+}
+
+#rsvp-form {
     width: 100%;
-    max-width: 420px;
-    padding: 14px;
-    margin: 12px 0;
-    border: 1px solid var(--light-blue);
-    border-radius: 6px;
+}
+
+.name-group {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 5px;
+}
+
+.name-group .form-group {
+    flex: 1;
+    position: relative;
+}
+
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 16px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
     font-size: 16px;
     transition: all 0.3s ease;
+    background: transparent;
+}
+
+.form-group input::placeholder {
+    color: #666;
+    background: transparent;
+}
+
+.rsvp-submit {
+    width: 100%;
+    padding: 16px;
+    margin-top: 20px;
+    background: var(--navy-blue);
+    color: white;
+    border: none;
+    border-radius: 40px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.rsvp-submit:hover {
+    background: var(--dusty-blue);
+    transform: translateY(-2px);
+}
+
+.event-details-card {
+    background: var(--beige);
+    padding: 10px;
+    border: 2px solid var(--navy-blue);
+    min-width: 300px;
+}
+
+.event-details-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: var(--text-dark);
+}
+
+.event-details-card p {
+    color: #666;
+    margin: 8px 0;
+    font-size: 15px;
+}
+
+@media (max-width: 768px) {
+    .rsvp-container {
+        flex-direction: column;
+    }
+    
+    .name-group {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .event-details-card {
+        width: 100%;
+    }
 }
 
 .rsvp input:focus, .rsvp select:focus {
@@ -795,15 +1005,103 @@ footer {
     font-size: 14px;
 }
 
-/* Animations
-.fade-in {
-    opacity: 0;
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+.rsvp-form-container {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 4rem;
+    background: var(--white);
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.fade-in.visible {
-    animation: fadeIn 1s ease-out forwards;
-} */
+.form-group {
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.form-group label {
+    position: absolute;
+    top: -20px;
+    left: 0;
+    font-size: 18px;
+    color: var(--navy-blue);
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 1px;
+    pointer-events: none;
+    background: transparent;
+    padding: 0 4px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    margin: 20px 0 8px;
+    border: 1px solid var(--dusty-blue);
+    border-radius: 4px;
+    font-size: 16px;
+    color: var(--text-dark);
+    background: transparent;
+    transition: all 0.3s ease;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 0.5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--navy-blue);
+    outline: none;
+    box-shadow: none;
+    transform: none;
+    background-color: transparent;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--navy-blue);
+    color: var(--white);
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 2rem;
+}
+
+.submit-btn:hover {
+    background-color: #876f52;
+}
+
+.thank-you-message {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    z-index: 1000;
+}
+
+.thank-you-content h3 {
+    color: #9c8465;
+    margin-bottom: 1rem;
+    font-size: 24px;
+}
+
+.thank-you-content p {
+    color: #666;
+    font-size: 16px;
+}
 
 .slide-up {
     opacity: 0;
@@ -1669,8 +1967,8 @@ h2 {
 
 .outfit-item img {
     width: 100%;
-    height: auto;
-    max-width: 300px;
+    height: 200px;
+    max-width: 500px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }

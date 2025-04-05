@@ -165,7 +165,20 @@ document.addEventListener("DOMContentLoaded", function () {
     if (rsvpForm) {
         rsvpForm.addEventListener("submit", function (event) {
             event.preventDefault();
-            alert("Thank you for your RSVP! We look forward to celebrating with you.");
+            const formData = new FormData(rsvpForm);
+            fetch(rsvpForm.action, {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors'
+            })
+            .then(() => {
+                alert("Thank you for your RSVP! We look forward to celebrating with you.");
+                rsvpForm.reset();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert("There was an error submitting your RSVP. Please try again.");
+            });
         });
     }
 
