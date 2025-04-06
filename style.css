@@ -249,27 +249,28 @@ nav.hidden {
   
 .rsvp-button {
     display: inline-block;
-    width: 100px; /* Set a width for the button */
-    height: 100px; /* Set a height for the button */
-    background: var(--cream); /* Background color */
-    color: var(--text-dark); /* Text color */
+    width: 200px; /* Increase width for a rectangular shape */
+    padding: 16px 16px; /* Maintain padding */
+    background: var(--gold); /* Use a gold background for elegance */
+    color: var(--white); /* White text for contrast */
     text-decoration: none;
-    border-radius: 50%; /* Make the button circular */
+    border-radius: 12px; /* Slightly rounded corners */
     transition: all 0.3s ease; /* Smooth transition for hover effects */
-    font-size: 16px; /* Adjust font size */
+    font-size: 0.9rem; /* Slightly smaller font size */
     text-align: center; /* Center text inside the button */
-    line-height: 80px; /* Center text vertically */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+    line-height: normal; /* Remove line-height for vertical centering */
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
     border: none; /* Remove border */
     font-weight: bold; /* Make text bold */
-    margin-top: 30px;
+    height: 20px; /* Keep height to avoid making it too tall */
 }
-  
+
 .rsvp-button:hover {
-    background: #d4b26a; /* Darker shade on hover */
+    background: var(--dusty-blue); /* Change to dusty blue on hover */
     transform: scale(1.05); /* Slightly enlarge on hover */
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
 }
+
 
 .section {
     padding: 10px 20px;
@@ -627,7 +628,8 @@ nav.hidden {
     overflow: hidden;
     aspect-ratio: 4/3; /* Maintain aspect ratio */
     min-height: 250px; /* Set a minimum height for each gallery item */
-    height: 300px; /* Set a fixed height for each gallery item */
+    height: 300px;
+    margin-bottom: 20px; /* Set a fixed height for each gallery item */
 }
 
 .gallery-item img {
@@ -644,8 +646,8 @@ nav.hidden {
 }
 
 .rsvp {
+    padding: 20px 10px; /* Reduced padding */
     background-color: var(--cream);
-    padding: 120px 20px;
     width: 100%;
     margin: 0 auto;
     max-width: 100%;
@@ -795,12 +797,14 @@ nav.hidden {
 
 .rsvp-container {
     max-width: 1200px;
-    margin: 60px auto;
+    margin-top: 10px; /* Reduced margin */
+    margin: 60px auto 20px;
     padding: 0 20px;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 40px;
     justify-content: center;
-    align-items: flex-start;
+    align-items: start;
 }
 
 .rsvp-form-section {
@@ -892,7 +896,9 @@ nav.hidden {
     background: var(--beige);
     padding: 10px;
     border: 2px solid var(--navy-blue);
-    min-width: 300px;
+    min-width: 100px;
+    max-width: 350px;
+    
 }
 
 .event-details-card h3 {
@@ -908,19 +914,90 @@ nav.hidden {
     font-size: 15px;
 }
 
-@media (max-width: 768px) {
-    .rsvp-container {
-        flex-direction: column;
+.map-section {
+    width: 100%;
+    height: 100%; /* Allow height to adjust based on content */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 20px; 
+    margin-top: 20px;/* Add margin to prevent overlap with footer */
+}
+
+.map-container {
+    flex: 1;
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+@media (max-width: 600px) {
+    .rsvp {
+        padding: 60px 20px;
     }
-    
+
+    .rsvp-container {
+        grid-template-columns: 1fr;
+        margin: 1px auto;
+        padding: 0 15px;
+        gap: 30px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 12px 15px;
+        font-size: 14px;
+        margin: 8px 0;
+    }
+
     .name-group {
         flex-direction: column;
-        gap: 0;
-    }
-    
-    .event-details-card {
+        gap: 15px;
         width: 100%;
     }
+
+    #rsvp-form {
+        width: 100%;
+        padding: 30px 20px;
+        box-sizing: border-box;
+    }
+}
+
+.rsvp-submit {
+    padding: 14px;
+    font-size: 14px;
+}
+
+.map-section {
+    min-height: 250px;
+}
+
+.event-details-card {
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.rsvp h2 {
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+.rsvp .subheading {
+    font-size: 16px;
+    margin-bottom: 30px;
 }
 
 .rsvp input:focus, .rsvp select:focus {
@@ -1267,6 +1344,15 @@ footer {
     margin-bottom: 40px;
 }
 
+.entourage-category p{
+    font-size: 1rem;
+    color: var(--gold);
+    margin-bottom: 15px;
+    font-family: 'Playfair Display', serif;
+    line-height: 1.4;   
+    letter-spacing: 5px;
+}
+
 .category-title {
     text-align: center;
     font-family: 'Playfair Display', serif;
@@ -1330,13 +1416,7 @@ footer {
     font-family: 'Playfair Display', serif;
     font-weight: 400;
     color: var(--text-dark);
-    margin-bottom: 8px;
-    font-size: 1.2rem;
-    letter-spacing: 0.5px;
-    font-size:.2 1.2rem;
-    margin-bottom: 8px;
-    color: var(--text-dark);
-    line-height: 1.4;
+    margin-bottom: 20px; /* Add bottom margin for spacing */
 }
 
 .sponsor-title {
@@ -1728,12 +1808,12 @@ h2 {
 
     .rsvp-button {
         display: inline-block;
-        width: 150px; /* Allow the button to adjust width based on content */
-        padding: 16px 16px; /* Reduce padding for a smaller size */
+        width: 200px; /* Increase width for a rectangular shape */
+        padding: 16px 16px; /* Maintain padding */
         background: var(--gold); /* Use a gold background for elegance */
         color: var(--white); /* White text for contrast */
         text-decoration: none;
-        border-radius: 15px; /* Rounded edges for a softer look */
+        border-radius: 12px; /* Slightly rounded corners */
         transition: all 0.3s ease; /* Smooth transition for hover effects */
         font-size: 0.9rem; /* Slightly smaller font size */
         text-align: center; /* Center text inside the button */
@@ -1741,14 +1821,55 @@ h2 {
         box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
         border: none; /* Remove border */
         font-weight: bold; /* Make text bold */
-        /* margin: 15px auto; Center the button */
-        height: 50px;
+        height: 20px; /* Keep height to avoid making it too tall */
     }
-
+    
     .rsvp-button:hover {
         background: var(--dusty-blue); /* Change to dusty blue on hover */
         transform: scale(1.05); /* Slightly enlarge on hover */
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
+    }
+    
+    .rsvp-container {
+        display: flex; /* Use flexbox */
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally */
+        max-width: 100%; /* Ensure it takes full width */
+        margin: 20px auto; /* Center the container */
+        padding: 0 20px; /* Add padding */
+    }
+    
+    .rsvp-form-section {
+        display: flex; /* Use flexbox */
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally */
+        width: 100%; /* Full width */
+        max-width: 500px; /* Limit max width */
+        top: 0;
+    }
+
+    .map-section {
+        width: 100%;
+        height: auto; /* Allow height to adjust based on content */
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 20px; /* Add margin to prevent overlap with footer */
+    }
+    
+    .map-container {
+        flex: 1;
+        width: 100%;
+        height: 250px; /* Set a fixed height for mobile */
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    
+    .map-container iframe {
+        width: 100%;
+        height: 100%; /* Ensure the iframe takes full height */
+        border: none;
     }
 
     .hero-image {
