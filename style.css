@@ -509,6 +509,7 @@ nav.hidden {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.8); /* Dark background */
     z-index: 1000; /* Ensure it's on top */
+    overflow: hidden; /* Prevent overflow */
 }
 
 .lightbox.active {
@@ -521,6 +522,8 @@ nav.hidden {
     border-radius: 8px; /* Optional: Add border radius for elegance */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Shadow for depth */
     transition: transform 0.3s ease; /* Smooth transition for scaling */
+    position: relative; /* Position relative for z-index */
+    z-index: 1; /* Ensure it's above the background */
 }
 
 .lightbox-close {
@@ -632,6 +635,7 @@ nav.hidden {
     min-height: 250px; /* Set a minimum height for each gallery item */
     height: 300px;
     margin-bottom: 20px; /* Set a fixed height for each gallery item */
+    position: relative; /* Ensure positioning for overflow */
 }
 
 .gallery-item img {
@@ -1589,10 +1593,21 @@ nav.top-page {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.8); /* Dark background */
     z-index: 1000; /* Ensure it's on top */
+    overflow: hidden; /* Prevent overflow */
 }
 
 .lightbox.active {
     display: flex; /* Show the lightbox when active */
+}
+
+.lightbox-image {
+    max-width: 70%; /* Adjust width to allow for partial visibility */
+    max-height: 80%; /* Adjust height to maintain aspect ratio */
+    border-radius: 8px; /* Optional: Add border radius for elegance */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+    position: relative; /* Position relative for z-index */
+    z-index: 1; /* Ensure it's above the background */
 }
 
 .lightbox-prev, .lightbox-next {
@@ -1607,20 +1622,21 @@ nav.top-page {
     color: var(--text-dark); /* Text color */
     border-radius: 50%; /* Circular buttons */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-    transition: background 0.3s; /* Only transition the background */
+    transition: background 0.3s, transform 0.3s; /* Smooth transitions for background and transform */
+    z-index: 2; /* Ensure buttons are above the image */
 }
 
 .lightbox-prev {
-    left: 20px; /* Position to the left */
+    left: 10%; /* Position to the left */
 }
 
 .lightbox-next {
-    right: 20px; /* Position to the right */
+    right: 10%; /* Position to the right */
 }
 
 .lightbox-prev:hover, .lightbox-next:hover {
     background: rgba(255, 255, 255, 1); /* Change background on hover */
-    /* Remove transform scale to prevent animation */
+    transform: translateY(-50%) scale(1.2); /* Enlarge to 120% on hover */
 }
 
 .registry, .registry-content {

@@ -359,14 +359,14 @@ document.addEventListener("DOMContentLoaded", function () {
     // Next button functionality
     lightboxNext.addEventListener("click", function (event) {
         event.stopPropagation(); // Prevent the lightbox from closing
-        currentIndex = (currentIndex + 1) % images.length; // Loop back to the first image
+        currentIndex = (currentIndex + 1) % images.length; // Loop back to the start
         lightboxImage.src = images[currentIndex]; // Update the image source
     });
 
     // Previous button functionality
     lightboxPrev.addEventListener("click", function (event) {
         event.stopPropagation(); // Prevent the lightbox from closing
-        currentIndex = (currentIndex - 1 + images.length) % images.length; // Loop back to the last image
+        currentIndex = (currentIndex - 1 + images.length) % images.length; // Loop to the end
         lightboxImage.src = images[currentIndex]; // Update the image source
     });
 });
@@ -437,3 +437,36 @@ document.querySelectorAll('.lightbox-trigger').forEach(item => {
 document.querySelector('.lightbox-close').addEventListener('click', () => {
     document.getElementById('image-lightbox').classList.remove('active');
 });
+
+const lightbox = document.getElementById('image-lightbox');
+const lightboxImage = document.querySelector('.lightbox-image');
+const prevButton = document.querySelector('.lightbox-prev');
+const nextButton = document.querySelector('.lightbox-next');
+
+let currentIndex = 0;
+const images = ['images/p1.jpg', 'images/p2.jpg', 'images/p3.jpg', 'images/p4.jpg', 'images/p5.jpg', 'images/p6.jpg', 'images/p7.jpg', 'images/p8.jpg'];
+
+function openLightbox(index) {
+    currentIndex = index;
+    lightboxImage.src = images[currentIndex];
+    lightbox.classList.add('active');
+}
+
+function closeLightbox() {
+    lightbox.classList.remove('active');
+}
+
+function showPrevImage() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    lightboxImage.src = images[currentIndex];
+}
+
+function showNextImage() {
+    currentIndex = (currentIndex + 1) % images.length;
+    lightboxImage.src = images[currentIndex];
+}
+
+// Event listeners
+prevButton.addEventListener('click', showPrevImage);
+nextButton.addEventListener('click', showNextImage);
+lightbox.addEventListener('click', closeLightbox);
