@@ -398,3 +398,42 @@ function adjustHeroImageWidth() {
 // Adjust the hero image width on page load and window resize
 window.addEventListener('load', adjustHeroImageWidth);
 window.addEventListener('resize', adjustHeroImageWidth);
+
+document.querySelectorAll('.lightbox-trigger').forEach(item => {
+    item.addEventListener('click', event => {
+        const lightbox = document.getElementById('image-lightbox');
+        const lightboxImage = document.querySelector('.lightbox-image');
+        const allImages = document.querySelectorAll('.lightbox-trigger');
+
+        // Get the clicked image source
+        lightboxImage.src = item.querySelector('img').src;
+
+        // Show the lightbox
+        lightbox.classList.add('active');
+
+        // Set up the slideshow functionality
+        let currentIndex = Array.from(allImages).indexOf(item);
+        
+        // Function to change the image in the lightbox
+        function changeImage(index) {
+            lightboxImage.src = allImages[index].querySelector('img').src;
+        }
+
+        // Next button functionality
+        document.querySelector('.lightbox-next').onclick = function() {
+            currentIndex = (currentIndex + 1) % allImages.length; // Loop back to the start
+            changeImage(currentIndex);
+        };
+
+        // Previous button functionality
+        document.querySelector('.lightbox-prev').onclick = function() {
+            currentIndex = (currentIndex - 1 + allImages.length) % allImages.length; // Loop to the end
+            changeImage(currentIndex);
+        };
+    });
+});
+
+// Close lightbox functionality
+document.querySelector('.lightbox-close').addEventListener('click', () => {
+    document.getElementById('image-lightbox').classList.remove('active');
+});
