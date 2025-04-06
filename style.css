@@ -1598,7 +1598,7 @@ nav.top-page {
 .lightbox-prev, .lightbox-next {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-50%); /* Keep the buttons centered vertically */
     background: rgba(255, 255, 255, 0.9); /* Slightly more opaque background */
     border: none; /* No border */
     padding: 12px 20px; /* Increased padding for a larger button */
@@ -1607,7 +1607,7 @@ nav.top-page {
     color: var(--text-dark); /* Text color */
     border-radius: 50%; /* Circular buttons */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-    transition: background 0.3s, transform 0.3s; /* Smooth transitions */
+    transition: background 0.3s; /* Only transition the background */
 }
 
 .lightbox-prev {
@@ -1620,7 +1620,7 @@ nav.top-page {
 
 .lightbox-prev:hover, .lightbox-next:hover {
     background: rgba(255, 255, 255, 1); /* Change background on hover */
-    transform: scale(1.1); /* Slightly enlarge on hover */
+    /* Remove transform scale to prevent animation */
 }
 
 .registry, .registry-content {
