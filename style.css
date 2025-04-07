@@ -1624,6 +1624,7 @@ nav.top-page {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
     transition: background 0.3s, transform 0.3s; /* Smooth transitions for background and transform */
     z-index: 2; /* Ensure buttons are above the image */
+    transition: background 0.3s; /* Only transition the background */
 }
 
 .lightbox-prev {
@@ -1636,7 +1637,9 @@ nav.top-page {
 
 .lightbox-prev:hover, .lightbox-next:hover {
     background: rgba(255, 255, 255, 1); /* Change background on hover */
+
     transform: translateY(-50%) scale(1.2); /* Enlarge to 120% on hover */
+    /* Remove transform scale to prevent animation */
 }
 
 .registry, .registry-content {
