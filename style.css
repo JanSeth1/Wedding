@@ -968,6 +968,12 @@ nav.hidden {
         margin: 8px 0;
     }
 
+    .parallax-image {
+        height: 300px; /* Adjust height for mobile */
+        background-attachment: scroll; /* Disable parallax effect on mobile */
+        max-width: 600px; /* Set maximum width for mobile */
+    }
+
     .name-group {
         flex-direction: column;
         gap: 15px;
@@ -1311,6 +1317,11 @@ footer {
     .nav-overlay.active {
         opacity: 1;
         visibility: visible;
+    }
+
+    .parallax-image {
+        height: 300px; /* Adjust height for mobile */
+        background-attachment: scroll; /* Disable parallax effect on mobile */
     }
 }
 
@@ -1794,22 +1805,33 @@ h2 {
 /* Mobile styles */
 @media (max-width: 600px) {
     nav {
-        padding: 10px 20px; /* Minimal padding for the navbar */
-        height: 70px; /* Adjust height if needed */
+        padding: 5px 15px;
+        height: 60px;
     }
 
     .hero {
-        padding: 0 20px 20px; /* Remove top padding */
+        padding: 0 20px 20px;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: var(--white);
+        padding: 10px 0;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
 
     .nav-menu li a {
-        font-size: 16px; /* Reduce font size for menu items */
-        padding-bottom: 3px; /* Adjust padding for menu items */
+        font-size: 16px;
+        padding: 8px 20px;
+        display: block;
     }
 
     .logo {
-        font-size: 18px; /* Reduce font size for the logo */
-        padding-left: 10px; /* Adjust padding for the logo */
+        font-size: 18px;
+        padding-left: 5px;
     }
 
     .hero-content {
@@ -2041,6 +2063,13 @@ h2 {
 
     .hero h1, .hero .subheading {
         margin-top: 0; /* Remove any top margin */
+    }
+
+    .parallax-image {
+        height: 300px; /* Adjust height for mobile */
+        background-attachment: scroll; /* Disable parallax effect on mobile */
+        max-width: 100%; /* Ensure it fits within the screen width */
+        background-size: cover; /* Ensure the image covers the area */
     }
 }
 
