@@ -2263,3 +2263,35 @@ h2 {
         padding: 20px;
     }
 }
+
+.contact-info {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 16px;
+    color: var(--text-dark);
+}
+
+.contact-info a {
+    color: var(--gold);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact-info a:hover {
+    color: var(--dusty-blue);
+}
+
+.phone-number {
+    font-size: 20px; /* Increase font size */
+    font-weight: bold; /* Make it bold */
+    color: var(--gold); /* Use gold color for emphasis */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Smooth transition for hover effect */
+    background-color: var(--beige) /* Light background for contrast */
+    padding: 5px 10px; /* Add padding for better visibility */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.phone-number:hover {
+    color: var(--dusty-blue); /* Change color on hover */
+}
