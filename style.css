@@ -2287,7 +2287,7 @@ h2 {
     color: var(--gold); /* Use gold color for emphasis */
     text-decoration: none; /* Remove underline */
     transition: color 0.3s; /* Smooth transition for hover effect */
-    background-color: var(--beige) /* Light background for contrast */
+    background-color: var(--beige); /* Light background for contrast */
     padding: 5px 10px; /* Add padding for better visibility */
     border-radius: 5px; /* Rounded corners */
 }
