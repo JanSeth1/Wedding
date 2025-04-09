@@ -1249,6 +1249,11 @@ footer {
 
 /* Navigation animation - UPDATED VERSION */
 @media (max-width: 768px) {
+    nav {
+        padding: 15px 20px; /* Adjusted padding for mobile */
+        height: 60px; /* Set fixed height for mobile nav */
+    }
+
     .menu-toggle {
         display: flex;
     }
