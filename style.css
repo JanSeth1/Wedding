@@ -2,14 +2,14 @@
 :root {
     --light-blue: #c6d4e1;
     --dusty-blue: #8da1b9;
-    --navy-blue: #4a5d75;
-    --gold: #d4b26a;
-    --cream: #f5efe6;
-    --beige: #faf7f2;
+    --navy-blue: #8da1b9;
+    --gold: #b8860b;
+    --cream: #f7e7ce;
+    --beige: #faf0e6;
     --white: #ffffff;
     --text-dark: #2c3e50;
     --text-light: #ffffff;
-    --peach: #f5e6d3;
+    --peach: #f7e7ce;
     --rose-gold: #b76e79;
     --sage-green: #9caf88;
     --blush-pink: #f7cac9;
@@ -551,6 +551,18 @@ nav.hidden {
 .save-date-image:hover img {
     transform: scale(1.02);
 }
+
+.details {
+    text-align: center;
+    background-image: radial-gradient(circle at 0% 90%, #fcd8c4 0%, #fefaf6 80%);
+    width: 100%;
+    max-width: none;
+    padding-left: 0;
+    padding-right: 0;
+    box-sizing: border-box;
+}
+
+
 
 .details-container {
     max-width: 800px;
@@ -1571,10 +1583,6 @@ nav.top-page {
     color: var(--text-dark);
 }
 
-.details {
-    text-align: center;
-}
-
 .schedule-item {
     margin: 80px 0; /* Space between items */
 }
@@ -2294,4 +2302,70 @@ h2 {
 
 .phone-number:hover {
     color: var(--dusty-blue); /* Change color on hover */
+}
+
+/* Override the bottom border for the details section */
+.details::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 5%; /* Center the 90% width border */
+    width: 90%; /* Set width to 90% */
+    height: 2px;
+    background: var(--gold);
+    /* Override animation properties from .section::after */
+    transform: none; 
+    transition: none;
+    opacity: 1; /* Ensure visibility */
+}
+
+.schedule-item {
+
+}
+
+/* Animation for rotating icons */
+@keyframes rotateIn {
+    from {
+        transform: rotate(0deg);
+        opacity: 0;
+    }
+    to {
+        transform: rotate(360deg);
+        opacity: 1;
+    }
+}
+
+.schedule-icon {
+    display: inline-block; /* Needed for transform */
+    margin-right: 10px; /* Add some space between icon and text */
+    color: var(--gold); /* Use gold color for the icon */
+}
+
+/* Apply animation when the schedule item's h3 is visible */
+h3.visible .schedule-icon {
+    animation: rotateIn 1s ease-out forwards;
+}
+
+.schedule-item h3 {
+    display: block; /* Changed from flex/block to ensure icon is inline with text if needed, though h3 is block */
+    /* align-items: center; Removed as not using flex */
+    font-family: 'Playfair Display', serif;
+    font-size: 28px; /* Adjust font size as needed */
+    color: var(--text-dark);
+}
+
+/* Style the footer email link to look like normal text */
+footer .footer-email a {
+    color: inherit; /* Inherit color from parent paragraph */
+    text-decoration: none; /* Remove underline */
+}
+
+/* Add hover effect for the email link */
+footer .footer-email a:hover {
+    color: var(--gold); /* Change color to gold on hover */
+    text-decoration: underline; /* Optionally add underline on hover */
+}
+
+.footer-divider {
+
 }
